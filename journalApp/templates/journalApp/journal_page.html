@@ -1,0 +1,324 @@
+{% extends 'journalApp/main.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-3 left-main-container ">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="inner-main-section col-12">
+                        <img src="../assets/imgs/ijms-logo.webp" alt="" class="journal-lmg">
+                        <div class="left-button-container">
+                            <button class="left-buttons left-button-submit full-width">Submit to IJMS</button>
+                        </div>
+                        <div class="left-button-container">
+                            <button class="left-buttons full-width">Review for IJMS</button>
+                        </div>
+                        <div class="left-button-container">
+                            <div class="container-fluid">
+                                <div class="row small-button-container">
+                                    <button class="col-2 left-buttons small-button"><i
+                                            class="fa-brands fa-twitter"></i></button>
+                                    <button class="col-2 left-buttons small-button"><i
+                                            class="fa-brands fa-facebook-f"></i></button>
+                                    <button class="col-2 left-buttons small-button"><i
+                                            class="fa-brands fa-linkedin-in"></i></button>
+                                    <button class="col-5 left-buttons bigger-button">Share</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <details class="details">
+                            <summary class="dropdown-headers">
+                                <h2 class="left-heading highly-aa">Journal Menu</h2>
+                            </summary>
+                            <ul class="side-menu-li-container">
+                                <li class="side-menu-li active "> <a href="/journal/ijms"><em>IJMS</em> Home
+                                    </a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/about">Aims & Scope</a>
+                                </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/editors"> Editorial Board
+                                    </a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/submission_reviewers">Reviewer
+                                        Board</a> </li>
+                                <li class="side-menu-li "> <a
+                                        href="/journal/ijms/topical_advisory_panel">Topical
+                                        Advisory
+                                        Panel</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/instructions">Instructions
+                                        for Authors</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/special_issues">Special
+                                        Issues</a> </li>
+                                <li class="side-menu-li"> <a
+                                        href="/topics?query=&journal=ijms&status=all&category=all">Topics</a>
+                                </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/sections">Sections &
+                                        Collections</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/apc">Article Processing
+                                        Charge</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/indexing">Indexing &
+                                        Archiving</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/most_cited">Most Cited &
+                                        Viewed</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/stats">Journal
+                                        Statistics</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/history">Journal
+                                        History</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/awards">Journal Awards</a>
+                                </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/societies">Society
+                                        Collaborations</a> </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/events">Conferences</a>
+                                </li>
+                                <li class="side-menu-li "> <a href="/journal/ijms/editorial_office">Editorial
+                                        Office</a> </li>
+                            </ul>
+                        </details>
+
+                    </div>
+
+                    <div class="inner-main-section col-12">
+                        <details class="details">
+                            <summary class="dropdown-headers">Journal Volumes</summary>
+                            <div class="volums-container container-fluid">
+                                <div class="row">
+                                    {% for volume in volumes %}
+                                    <div class="col-12 col-lg-6">
+                                        <ul class="vol-li-container">
+                                            <li class="vol-lists"><a href="{% url 'volume' volume.id %}">Vol. {{volume.number}} ({{volume.date_created}})</a></li>
+                                        </ul>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-6 middle-main-container">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="inner-main-section col-12">
+                        <h2><i class="italic-heading">{{journal.name}}</i></h2>
+                        <p class="ijMS-paragraph">{{journal.about}}</p>
+
+                        <ul class="ijms-ul">
+                            <li class="ijms-list-item">
+                                Open Access— free for readers, with article processing charges (APC) paid by
+                                authors or their institutions.
+                            </li>
+                            <li class="ijms-list-item">
+                                High Visibility: indexed within Scopus, SCIE (Web of Science), PubMed, PMC,
+                                MEDLINE, Embase, CAPlus / SciFinder, and
+                                other databases.
+                            </li>
+                            <li class="ijms-list-item">
+                                Journal Rank: JCR - Q1 (Biochemistry & Molecular Biology) / CiteScore - Q1
+                                (Inorganic Chemistry)
+                            </li>
+                            <li class="ijms-list-item">
+                                Rapid Publication: manuscripts are peer-reviewed and a first decision is
+                                provided to authors approximately 15.9 days
+                                after submission; acceptance to publication is undertaken in 2.9 days (median
+                                values for papers published in this
+                                journal in the second half of 2022).
+                            </li>
+                            <li class="ijms-list-item">
+                                Recognition of Reviewers: reviewers who provide timely, thorough peer-review
+                                reports receive vouchers entitling them to
+                                a discount on the APC of their next publication in any MDPI journal, in
+                                appreciation of the work done.
+                            </li>
+                            <li class="ijms-list-item">
+                                Testimonials: See what our editors and authors say about the IJMS.
+                            </li>
+                            <li class="ijms-list-item">
+                                Companion journals for IJMS include: Biophysica, Obesities, Stresses and
+                                Lymphatics.
+                            </li>
+                        </ul>
+                        <p class="ijMS-paragraph">Impact Factor: {{journal.impact}}</p>
+                    </div>
+
+                    <div class="inner-main-section col-12 recent-articles">
+                        <h2>Recent Articles</h2>
+                        <div class="recent-articles-child">
+                            {% for paper in papers %}
+                            <div class="recent-article">
+                                <span class="openacess"><a href="#0">Open Access</a> </span>
+                                <span class="Article">Article</span>
+                                <h2 class="article-heading">
+                                    <a href="#0">
+                                        {{paper.title}}
+                                    </a>
+                                </h2>
+                                <p class="by-authors">by <a href="#0">Halina Buczkowska,</a> <a
+                                        href="#0">Andrzej
+                                        Sałata</a> and <a href="#0">Renata Nurzyńska-Wierdak</a>
+                                </p>
+                                <i>{{paper.doi}}
+                                    (registering
+                                    DOI) - {{paper.date_created}}</i>
+                                <p class="abstract">
+                                    <a href="#0">Abstract</a>
+                                    {{paper.description}}
+                                    <a href="#0">Read more.</a>
+                                </p>
+                                <p class="belongs-to">(This article belongs to the journal of <a
+                                        href="#0">{{paper.journal}})</a>
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 right-main-container">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="inner-main-section col-12">
+                        <h2>E-Mail Alert</h2>
+                        <p>Add your e-mail address to receive forthcoming issues of this journal</p>
+                        <div class="left-button-container">
+                            <div class="footer-subscribe-form">
+                                <input type="text" placeholder="Author / Affiliation / Email">
+                            </div>
+                        </div>
+                        <div class="left-button-container">
+                            <button class="left-buttons full-width">Review for IJMS</button>
+                        </div>
+                    </div>
+                    <div class="inner-main-section col-12">
+                        <details class="details  open-on-desktop">
+                            <summary class="dropdown-headers">
+                                <h2 class="highly-aa">News</h2>
+                            </summary>
+
+                            <div class="news-item">
+                                <p class="date-of-news">30 May 2023</p>
+                                <a href="#0" class="news-title">
+                                    AI Accepted into Emerging Sources Citation Index in Web of Science
+                                </a>
+                            </div>
+                            <div class="news-item">
+                                <p class="date-of-news">30 May 2023</p>
+                                <a href="#0" class="news-title">
+                                    AI Accepted into Emerging Sources Citation Index in Web of Science
+                                </a>
+                            </div>
+                            <div class="news-item">
+                                <p class="date-of-news">30 May 2023</p>
+                                <a href="#0" class="news-title">
+                                    AI Accepted into Emerging Sources Citation Index in Web of Science
+                                </a>
+                            </div>
+                            <div class="news-item">
+                                <p class="date-of-news">30 May 2023</p>
+                                <a href="#0" class="news-title">
+                                    AI Accepted into Emerging Sources Citation Index in Web of Science
+                                </a>
+                            </div>
+                            <div class="news-item">
+                                <p class="date-of-news">30 May 2023</p>
+                                <a href="#0" class="news-title">
+                                    AI Accepted into Emerging Sources Citation Index in Web of Science
+                                </a>
+                            </div>
+                            <div class="news-item">
+                                <p class="date-of-news">30 May 2023</p>
+                                <a href="#0" class="news-title">
+                                    AI Accepted into Emerging Sources Citation Index in Web of Science
+                                </a>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="inner-main-section col-12 Topics">
+                        <details class="details  open-on-desktop">
+                            <summary class="dropdown-headers">
+                                <h2 class="highly-aa">Topics</h2>
+                            </summary> <br>
+
+                            <div class="left-button-container">
+                                <button class="left-buttons full-width">Edit Topic</button>
+                            </div> <br>
+
+                            <div class="topic-item">
+                                <p class="topic-in"><i>Topic in Applied Sciences, Energies, Geosciences,
+                                        Minerals,
+                                        Water</i> <a href="#0">Porous Flow of Energy & CO2 Transformation and
+                                        Storage in Deep Formations</a>
+                                </p>
+                                <p class="topic-editors">Topic Editors: Jianjun Liu, Yuewu Liu, Zhengming Yang,
+                                    Yiqiang Li, Fuquan Song, Rui Song, Yun Yang</p>
+                                <p class="deadline">Deadline: 6 June 2023</p>
+                            </div>
+                            <div class="topic-item">
+                                <p class="topic-in"><i>Topic in Applied Sciences, Energies, Geosciences,
+                                        Minerals,
+                                        Water</i> <a href="#0">Porous Flow of Energy & CO2 Transformation and
+                                        Storage in Deep Formations</a>
+                                </p>
+                                <p class="topic-editors">Topic Editors: Jianjun Liu, Yuewu Liu, Zhengming Yang,
+                                    Yiqiang Li, Fuquan Song, Rui Song, Yun Yang</p>
+                                <p class="deadline">Deadline: 6 June 2023</p>
+                            </div>
+                            <div class="topic-item">
+                                <p class="topic-in"><i>Topic in Applied Sciences, Energies, Geosciences,
+                                        Minerals,
+                                        Water</i> <a href="#0">Porous Flow of Energy & CO2 Transformation and
+                                        Storage in Deep Formations</a>
+                                </p>
+                                <p class="topic-editors">Topic Editors: Jianjun Liu, Yuewu Liu, Zhengming Yang,
+                                    Yiqiang Li, Fuquan Song, Rui Song, Yun Yang</p>
+                                <p class="deadline">Deadline: 6 June 2023</p>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="inner-main-section col-12 Topics">
+                        <details class="details  open-on-desktop">
+                            <summary class="dropdown-headers">
+                                <h2 class="highly-aa">Special Issues</h2>
+                            </summary><br>
+
+                            <div class="left-button-container">
+                                <button class="left-buttons full-width">Edit Special Issues</button>
+                            </div> <br>
+
+                            <div class="selected-special-items">
+                                <p class="special-issue-in">Special Issue in MAKE</p>
+                                <a href="#0">Machine Learning for Biomedical Data Processing</a>
+                                <p class="guest-authors">Guest Editors: Abdulhamit Subasi, Humaira Nisar, Saeed
+                                    Mian
+                                    Qaisar</p>
+                                <p class="deadline">Deadline: 15 June 2023</p>
+                            </div>
+                            <div class="selected-special-items">
+                                <p class="special-issue-in">Special Issue in MAKE</p>
+                                <a href="#0">Machine Learning for Biomedical Data Processing</a>
+                                <p class="guest-authors">Guest Editors: Abdulhamit Subasi, Humaira Nisar, Saeed
+                                    Mian
+                                    Qaisar</p>
+                                <p class="deadline">Deadline: 15 June 2023</p>
+                            </div>
+                            <div class="selected-special-items">
+                                <p class="special-issue-in">Special Issue in MAKE</p>
+                                <a href="#0">Machine Learning for Biomedical Data Processing</a>
+                                <p class="guest-authors">Guest Editors: Abdulhamit Subasi, Humaira Nisar, Saeed
+                                    Mian
+                                    Qaisar</p>
+                                <p class="deadline">Deadline: 15 June 2023</p>
+                            </div>
+
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

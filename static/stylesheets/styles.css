@@ -1,0 +1,936 @@
+:root {
+    --samll-font: 12px;
+    --primary-color: #4f5671;
+    --main-background: #f5f4f2;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media screen and (max-width: 1000px) {
+    div.gap {
+        display: none;
+    }
+
+}
+
+header.header-section nav {
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+nav.main-navigation,
+ul.nav-link-container,
+nav.mobile-navigation {
+    display: flex;
+}
+
+div.site-logo a img {
+    height: 40px;
+}
+
+nav.main-navigation,
+nav.mobile-navigation {
+    justify-content: space-between;
+    padding: 10px 40px;
+    align-items: center;
+}
+
+span.search-button {
+    margin-right: 10px;
+}
+
+ul.nav-link-container {
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+}
+
+ul.nav-link-container li.nav-links {
+    list-style-type: none;
+}
+
+ul.nav-link-container li.nav-links a {
+    font-size: 15px;
+    color: #000;
+    text-decoration: none;
+    padding: 15px 0;
+}
+
+ul.nav-link-container li.nav-links a:hover,
+li.nav-links-journals:hover ul.inner-nav-journals li a:hover {
+    text-decoration: underline;
+}
+
+ul.nav-link-container li.nav-links>ul {
+    display: none;
+}
+
+div.nav-containers-buttons {
+    justify-content: space-between;
+}
+
+div.nav-containers-buttons button,
+div.sub-search-section button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    font-size: var(--samll-font);
+    margin-left: 20px;
+}
+
+div.nav-containers-buttons button.submit {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+/* styles for the hover dropdon */
+li.nav-links-journals,
+li.nav-links-information,
+li.nav-links-initiative,
+li.nav-links-about {
+    position: relative
+}
+
+li.nav-links-journals:hover ul.inner-nav-journals,
+li.nav-links-information:hover ul.inner-nav-information,
+li.nav-links-initiative:hover ul.inner-nav-initiative,
+li.nav-links-about:hover ul.inner-nav-about {
+    display: block;
+    position: absolute;
+    margin: 10px 0 -20px 0;
+    margin-left: -20px;
+    background-color: #4f5671;
+    padding: 0;
+    padding: 10px 20px;
+}
+
+li.nav-links-information:hover ul.inner-nav-information {
+    display: flex;
+    justify-content: space-between;
+}
+
+li.nav-links-journals:hover ul.inner-nav-journals,
+li.nav-links-initiative:hover ul.inner-nav-initiative {
+    width: 150px;
+}
+
+li.nav-links-information:hover ul.inner-nav-information {
+    width: 400px;
+}
+
+li.nav-links-journals:hover ul.inner-nav-journals li,
+li.nav-links-information:hover ul.inner-nav-information li,
+li.nav-links-initiative:hover ul.inner-nav-initiative li,
+li.nav-links-about:hover ul.inner-nav-about li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+li.nav-links-journals:hover ul.inner-nav-journals li a,
+li.nav-links-information:hover ul.inner-nav-information li a,
+li.nav-links-initiative:hover ul.inner-nav-initiative li a,
+li.nav-links-about:hover ul.inner-nav-about li a {
+    color: #fff;
+    font-size: var(--samll-font);
+}
+
+nav.mobile-navigation {
+    display: none;
+}
+
+/* styles for the mobile navigation */
+section.mobile-navigation-body {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    nav.main-navigation {
+        display: none;
+    }
+
+    nav.mobile-navigation {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+}
+
+/* styles for the mobile navigation body */
+section.mobile-navigation-body div.cancel-button {
+    /* display: flex;
+    justify-content: flex-end; */
+    text-align: right;
+    padding: 20px;
+}
+
+section.mobile-navigation-body {
+    height: 100vh;
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    overflow: scroll;
+}
+
+section.mobile-navigation-body li.mobile-nav-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+section.mobile-navigation-body li.mobile-nav-links a {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+section.mobile-navigation-body li.mobile-nav-links span,
+section.mobile-navigation-body div.cancel-button span,
+div.mobile-menu-button span {
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+div.mobile-menu-button span {
+    color: #000;
+}
+
+section.mobile-navigation-body li.mobile-nav-links ul {
+    display: none;
+}
+
+li.mobile-nav-links ul.mobile-inner-nav-journals a,
+li.mobile-nav-links ul.mobile-inner-nav-information a,
+li.mobile-nav-links ul.mobile-inner-nav-initiative a,
+li.mobile-nav-links ul.mobile-inner-nav-about a {
+    font-size: 12px;
+}
+
+li.mobile-nav-links ul.mobile-inner-nav-journals a:hover,
+li.mobile-nav-links ul.mobile-inner-nav-information a:hover,
+li.mobile-nav-links ul.mobile-inner-nav-initiative a:hover,
+li.mobile-nav-links ul.mobile-inner-nav-about a:hover {
+    text-decoration: underline;
+}
+
+/* styles for the hero image in the index page */
+div.hero-image {
+    height: 250px;
+    width: 100%;
+    background: rgb(255, 255, 255) url(../assets/imgs/index-hero.webp) no-repeat center center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    /* background-size: ; */
+    /* align-items: center; */
+}
+
+div.hero-image h1 {
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    div.hero-image h1 {
+        font-size: 2rem;
+    }
+}
+
+div.hero-image div.learn-more-button a {
+    padding: 10px 20px;
+    border-radius: 100px;
+    background-color: #fff;
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+div.hero-image div.learn-more-button a:hover {
+    color: rgb(100, 158, 220);
+}
+
+/* styles for the search section */
+div.search-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+div.search-section div.sub-search-section input,
+div.search-section div.sub-search-section select,
+.footer-select,
+div.footer-subscribe-form input,
+div.side-menu-select select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    font-size: 12px;
+    width: 160px;
+}
+
+div.sub-search-section button,
+footer.main-footer button.subscribe {
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0;
+    background-color: #fff;
+}
+
+div.sub-search-section button:first-child,
+footer.main-footer button.subscribe {
+    background-color: var(--primary-color);
+    font-weight: 600;
+    color: #fff;
+}
+
+/* media queries for sub-search section  */
+@media screen and (max-width: 1200px) {
+    div.sub-search-section {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/* styles for the main section */
+main.main-secton {
+    background-color: var(--main-background);
+    padding-top: 20px;
+}
+
+/* styles for the left-panel section */
+div.inner-main-section {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.left-panel-search,
+.footer-select,
+div.footer-subscribe-form input,
+div.side-menu-select select {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* styles for the dropdowns */
+details.details {
+    margin-top: 10px;
+}
+
+summary.dropdown-headers {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+details.details summary,
+details.details ul li a {
+    font-size: 12px;
+}
+
+details.details ul li,
+details.details ul li a,
+div.volums-container ul li,
+div.volums-container ul li a {
+    text-decoration: none;
+    color: #000;
+    list-style-type: none;
+}
+
+details.details ul li a:hover {
+    text-decoration: underline;
+}
+
+/* style for the singlw content on the left side */
+div.list-with-picture {
+    margin-top: 10px;
+}
+
+div.list-with-picture a {
+    text-decoration: none;
+    color: #000;
+}
+
+div.image-and-text {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    padding: 5px;
+    cursor: pointer;
+}
+
+div.image-and-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+div.image-and-text-container p {
+    font-size: 13px;
+}
+
+div.image-and-text img.left-section-image {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 15px;
+}
+
+p.left-section-circle-end {
+    background-color: rgba(255, 208, 0, 0.968);
+    padding: 15px 12px;
+    border-radius: 100%;
+    line-height: 10px;
+    font-weight: 700;
+}
+
+/* styles for latest article section  */
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+h2.highly-aa {
+    display: inline;
+    font-size: 15px;
+}
+
+div.latest-articles p.content-type,
+div.topic-item p.deadline,
+div.selected-special-items p.deadline {
+    color: rgb(209, 112, 2);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+div.latest-articles a,
+div.topic-item .topic-in a,
+div.news-item a,
+div.selected-special-items a,
+div.inner-main-section span.openacess a,
+div.recent-articles h2 a,
+div.recent-articles p.by-authors a,
+div.recent-articles p.abstract a,
+div.recent-articles p.belongs-to a,
+footer.main-footer ul.footer-links-container li a,
+div.footer-lower-right a,
+div.conferences-link-container p.conferences-link,
+div.topic-item a,
+div.sa-upper-section p a,
+div.recent-articles p a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+div.latest-articles a:hover,
+div.topic-item .topic-in a:hover,
+div.news-item a:hover,
+div.selected-special-items a:hover,
+div.recent-articles h2 a:hover,
+div.recent-articles p.by-authors a:hover,
+div.recent-articles p.abstract a:hover,
+div.recent-articles p.belongs-to a:hover,
+footer.main-footer ul.footer-links-container li a:hover,
+div.conferences-link-container p.conferences-link:hover,
+div.footer-lower-right a:hover,
+div.cards-container div p a:hover,
+div.sa-upper-section p a:hover,
+div.recent-articles p a:hover {
+    text-decoration: underline;
+}
+
+
+img.latest-articles-images {
+    max-height: 350px;
+    width: 100%;
+}
+
+
+/* styles for the middle section  */
+div.carousel-caption-edited {
+    background-color: blue;
+    width: 100%;
+    right: 0;
+    left: 0;
+    background-color: rgba(35, 117, 83, 0.655);
+    padding: 20px;
+}
+
+div.carousel-caption-edited p,
+div.carousel-caption-edited h5 {
+    font-size: 15px;
+    text-align: left;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* styles for the little article and open access button  */
+span.Article,
+span.openacess {
+    color: #fff;
+    font-size: 10px;
+    padding: 3px 5px;
+}
+
+div.inner-main-section span.Article {
+    background-color: rgb(90, 6, 6);
+    margin-left: 5px;
+}
+
+div.inner-main-section span.openacess {
+    background-color: rgb(38, 43, 91);
+}
+
+div.inner-main-section span.openacess a {
+    color: #fff;
+    font-weight: normal;
+}
+
+div.recent-articles h2 a {
+    font-size: 16px;
+}
+
+div.recent-articles p.by-authors,
+div.recent-articles i,
+div.recent-articles p.abstract,
+div.recent-articles p.belongs-to,
+p.ijMS-paragraph,
+ul.ijms-ul li.ijms-list-item,
+div.inner-main-section p {
+    font-size: 12px;
+}
+
+h2 i.italic-heading {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+div.recent-article {
+    margin-bottom: 40px;
+}
+
+/* styles for the news section  */
+div.news-item {
+    border-bottom: 1px solid rgb(205, 205, 205);
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+div.news-item p.date-of-news {
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* styles for the topic section */
+div.topic-item,
+div.selected-special-items {
+    margin-bottom: 20px;
+}
+
+
+/* styles for selected-special-items */
+div.topic-item p,
+div.selected-special-items p.guest-authors {
+    font-size: 12px;
+    color: #929292;
+    margin-bottom: 0;
+}
+
+/* styles for journal-by-subject before footer */
+div.journal-by-subject {
+    background-color: #fff;
+    padding: 40px;
+}
+
+div.journal-by-subject div.list-with-picture div.image-and-text-container img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+/* styles for the footer section */
+footer.main-footer {
+    background-color: var(--primary-color);
+}
+
+footer.main-footer div.upper-footer {
+    padding: 40px;
+}
+
+footer.main-footer ul.footer-links-container {
+    margin: 0;
+    padding: 0;
+}
+
+footer.main-footer h4,
+h4.abstract-h4 {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+footer.main-footer ul.footer-links-container li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+footer.main-footer img.footer-logo {
+    max-height: 50px;
+    margin-bottom: 20px;
+}
+
+footer.main-footer p.footer-left-paragraph {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+footer.main-footer ul.footer-links-container li a,
+footer.main-footer h4,
+p.footer-left-paragraph {
+    color: #fff;
+}
+
+select.footer-select,
+div.footer-subscribe-form input {
+    margin-bottom: 5px;
+}
+
+/* style for the footer button  */
+footer.main-footer button.subscribe {
+    background-color: #313236;
+    margin-top: 10px;
+    padding: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+div.footer-content {
+    margin-bottom: 20px;
+}
+
+/* styles for the lower footer section  */
+footer.main-footer div.lower-footer {
+    padding: 20px 40px;
+    background-color: #313236;
+    color: #fff;
+}
+
+footer.main-footer div.lower-footer p {
+    margin: 0;
+}
+
+div.lower-footer-right {
+    text-align: end;
+}
+
+div.footer-lower-right {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+div.footer-lower-right a {
+    color: #fff;
+}
+
+
+/* styles for the seperate journal page */
+div.inner-main-section img.journal-lmg {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+div.left-button-container {
+    margin: 10px 0;
+}
+
+div.inner-main-section div.left-button-container button.full-width,
+div.inner-main-section button.left-buttons-go {
+    width: 100%;
+}
+
+div.inner-main-section div.small-button-container button {
+    margin-left: 5px;
+    padding: 10px 0;
+}
+
+div.inner-main-section div.small-button-container button i::before {
+    font-size: 15px;
+}
+
+div.inner-main-section button.left-buttons,
+button.left-buttons-go {
+    /* width: 100%; */
+    padding: 5px 0;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: #fff;
+    font-size: 12px;
+}
+
+div.inner-main-section button.left-button-submit {
+    background-color: rgba(64, 16, 59, 0.75);
+    border: none;
+    color: #fff;
+}
+
+div.inner-main-section button.left-button-submit:hover,
+div.inner-main-section button.left-buttons:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* styles for the left menu of journal sample page */
+ul.side-menu-li-container li a {
+    color: #000;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+ul.side-menu-li-container li a:hover,
+div.volums-container li a:hover {
+    text-decoration: underline;
+    color: rgba(64, 16, 59, 0.75);
+}
+
+button.left-buttons-go {
+    margin-top: 10px;
+    background-color: #a49e9e;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+}
+
+button.left-buttons-go:hover {
+    background-color: var(--primary-color);
+}
+
+div.ijms-footer-buttons-contianer p {
+    display: inline-block;
+}
+
+p.ijms-footer-buttons span {
+    font-size: 15px;
+}
+
+ul.ijms-ul li {
+    list-style-type: none;
+}
+
+div.conferences-img-container img {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+}
+
+div.volums-container {
+    margin-top: 20px;
+}
+
+div.volums-container ul {
+    padding: 0
+}
+
+/* styles for the editors page */
+div.middle-main-container div.inner-main-section {
+    padding: 50px;
+}
+
+@media screen and (max-width: 767px) {
+    div.middle-main-container div.inner-main-section {
+        padding: 20px;
+    }
+}
+
+div.ec-filter-section p {
+    padding-left: 0;
+    font-size: 14px;
+}
+
+div.ec-filter-section select {
+    padding: 5px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+div.ec-filter-section select,
+div.ec-filter-section p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* styles for the right side of editors page s-and-f-button-container */
+@media screen and (max-width: 1024px) {
+    div.s-and-f-button-parent {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    div.s-and-f-button-parent {
+        padding: 10px;
+    }
+}
+
+div.s-and-f-button-container:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+div.s-and-f-button-container a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+div.s-and-f-button-container a span {
+    font-size: 30px;
+}
+
+@media screen and (min-width: 1200px) {
+    div.s-and-f-button-container a span {
+        font-size: 40px;
+    }
+}
+
+div.s-and-f-button-container a span:hover {
+    cursor: pointer;
+}
+
+/* remove the display of editors page s-and-f button-container on mobile view */
+@media screen and (max-width: 767px) {
+    div.rho-mobile {
+        display: none;
+    }
+}
+
+/* styles for the the single volume page */
+div.left-button-container button.volume-button {
+    background-color: #25a7ed;
+}
+
+div.left-button-container button.volume-button:hover {
+    background-color: #7dcefa;
+}
+
+/* styles for the volume card display */
+div.cards-container img {
+    max-height: 180px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+div.cards-container div h4,
+div.cards-container div p a,
+div.cards-container div p {
+    color: var(--primary-color);
+    font-size: 15px;
+    text-align: center;
+    margin: 5px 0;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+div.cards-container div p a {
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* styles for the single article page */
+div.sfb-single-aticle div.s-and-f-button-container p {
+    font-size: 10px;
+}
+
+div.sa-top-buttons {
+    margin: 0;
+}
+
+h2.sa-headings-h2 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+/* styles for sa-heading-bts */
+div.sa-heading-bts-d-container {
+    display: flex;
+}
+
+div.sa-heading-bt-container a.sa-heading-bts {
+    background-color: var(--primary-color);
+    padding: 6px 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+    width: 120px;
+    flex-wrap: wrap;
+}
+
+div.sa-heading-bt-container a.sa-heading-bts {
+    margin: 5px;
+}
+
+/* styles for the iframe for viewing pdf */
+iframe.pdf-viewer {
+    width: 100%;
+    height: 100vh;
+}
+
+h4.abstract-h4 {
+    margin-top: 15px;
+}
+
+/* styles for the journal submission page */
+form.journal-submission h4 span.required {
+    font-size: 20px;
+    color: #f00;
+}
+
+p.lb-country {
+    margin-top: 5px;
+}
+
+div.sf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    flex-flow: column;
+}
+
+div.sf-container input {
+    text-align: center;
+}
+
+div.sf-container p,
+div.sf-container input {
+    margin: 0;
+}
