@@ -94,7 +94,7 @@
                             <div class="row">
                                 {% for issue in issues %}
                                 <div class="col-md-3 col-sm-4 col-6">
-                                    <a href="#0">
+                                    <a href="{% url 'issue' issue.id %}">
                                         <img src="{% static 'assets/imgs/cover-sustainability-v14-i1.webp' %}" alt="">
                                     </a>
                                     <h4>Vol. {{issue.volume.number}}, Iss. {{issue.number}}</h4>

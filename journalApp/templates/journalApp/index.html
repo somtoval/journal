@@ -15,76 +15,57 @@
 </head>
 
 <body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <header class="header-section">
         <nav class="main-navigation">
             <div class="nav-containers site-logo">
-                <a href="">
+                <a href="{% url 'home' %}">
                     <img src="{% static 'assets/imgs/logo.svg' %}" alt="site-logo" height="auto">
                 </a>
             </div>
             <div class="nav-containers">
                 <ul class="nav-link-container">
-                    <li class="nav-links nav-links-journals"><a href="">Journals</a>
-                        <ul class="inner-nav-journals">
-                            <li class="inner-nav-journals-link"><a href="">Active Journals</a></li>
-                            <li class="inner-nav-journals-link"><a href="">Find a Journal</a></li>
-                            <li class="inner-nav-journals-link"><a href="">Proceedings Series</a></li>
-                        </ul>
+                    <li class="nav-links nav-links-journals"><a href="{% url 'all-journals' %}">All Journals</a>
                     </li>
-                    <li class="nav-links"><a href="">Topics</a></li>
+                    <li class="nav-links"><a href="{% url 'topics' %}">Topics</a></li>
                     <li class="nav-links nav-links-information"><a href="">Information</a>
                         <ul class="inner-nav-information">
                             <div class="inner-nav-information-container">
-                                <li class="inner-nav-information-link"><a href="">For Authors</a> </li>
-                                <li class="inner-nav-information-link"><a href="">For Reviewers</a> </li>
-                                <li class="inner-nav-information-link"><a href="">For Editors</a> </li>
-                                <li class="inner-nav-information-link"><a href="">For Librarians</a> </li>
-                                <li class="inner-nav-information-link"><a href="">For Publishers</a> </li>
-                                <li class="inner-nav-information-link"><a href="">For Societies</a> </li>
-                                <li class="inner-nav-information-link"><a href="">For Conference Organizers</a> </li>
-                            </div>
-                            <div class="inner-nav-information-container">
-                                <li class="inner-nav-information-link"><a href="">Open Access Policy</a></li>
-                                <li class="inner-nav-information-link"><a href="">Institutional Open Access Program</a>
+                                <li class="inner-nav-information-link"><a href="{% url 'authors' %}">For Authors</a>
                                 </li>
-                                <li class="inner-nav-information-link"><a href="">Special Issues Guideline</a></li>
-                                <li class="inner-nav-information-link"><a href="">Editorial Process</a></li>
-                                <li class="inner-nav-information-link"><a href="">Research and Publication Ethics</a>
+                                <li class="inner-nav-information-link"><a href="{% url 'reviewers' %}">For
+                                        Reviewers</a> </li>
+                                <li class="inner-nav-information-link"><a href="{% url 'editors' %}">For Editors</a>
                                 </li>
-                                <li class="inner-nav-information-link"><a href="">Article Processing Charges</a></li>
-                                <li class="inner-nav-information-link"><a href="">Awards</a></li>
-                                <li class="inner-nav-information-link"><a href="">Testimonials</a></li>
+                                <li class="inner-nav-information-link"><a href="{% url 'open-access' %}">Open Access
+                                        Policy</a></li>
+                                <li class="inner-nav-information-link"><a href="{% url 'editorialProcess' %}">Editorial
+                                        Process</a></li>
+                                <li class="inner-nav-information-link"><a
+                                        href="{% url 'ethics' %}">Research and Publication
+                                        Ethics</a>
+                                </li>
+                                <li class="inner-nav-information-link"><a
+                                        href="{% url 'charges' %}">Article Processing Charges</a>
+                                </li>
                             </div>
 
                         </ul>
-                    </li>
-                    <li class="nav-links"><a href="">Author Services</a> </li>
-                    <li class="nav-links nav-links-initiative"><a href="">Initiatives</a>
-                        <ul class="inner-nav-initiative">
-                            <li class="inner-nav-initiative-link"><a href="">Sciforum</a> </li>
-                            <li class="inner-nav-initiative-link"><a href=""> MDPI Books</a></li>
-                            <li class="inner-nav-initiative-link"><a href="">Preprints.org</a> </li>
-                            <li class="inner-nav-initiative-link"><a href="">Scilit</a> </li>
-                            <li class="inner-nav-initiative-link"><a href="">SciProfiles</a> </li>
-                            <li class="inner-nav-initiative-link"><a href="">Encyclopedia</a> </li>
-                            <li class="inner-nav-initiative-link"><a href="">JAMS</a> </li>
-                            <li class="inner-nav-initiative-link"><a href="">Proceedings Series</a> </li>
-                        </ul>
-                    </li>
-                    <li class="nav-links nav-links-about"><a href="">About</a>
-                        <ul class="inner-nav-about">
-                            <li class="inner-nav-about-link"><a href="">Overview</a> </li>
-                            <li class="inner-nav-about-link"><a href="">Contact</a> </li>
-                            <li class="inner-nav-about-link"><a href="">Careers</a> </li>
-                            <li class="inner-nav-about-link"><a href="">News</a> </li>
-                            <li class="inner-nav-about-link"><a href="">Blog</a> </li>
-                        </ul>
-                    </li>
+                    <li class="nav-links nav-links-about"><a href="{% url 'about' %}">About</a></li>
+                    <li class="nav-links nav-links-about"><a href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
             </div>
             <div class="nav-containers nav-containers-buttons">
                 <button class="Sign-up">Sign In / Sign Up</button>
-                <button class="submit">Submit</button>
+                <a href="{% url 'submit' %}">
+                    <button class="submit">Submit</button>
+                </a>
             </div>
         </nav>
 
@@ -223,7 +204,7 @@
                             <select id="journal" tabindex="3" name="journal" class="chosen-select">
                                 <option value="">All Journals</option>
                                 {% for journal in journals %}
-                                    <option value="">{{journal.name}}</option>
+                                    <option value="{{journal.name}}" name="journal" >{{journal.name}}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -427,22 +408,22 @@
                                         <span class="openacess">Open Access</span>
                                         <span class="Article">Article</span>
                                         <h2 class="article-heading">
-                                            <a href="#0">
+                                            <a href="{% url 'paper' paper.id %}">
                                                 {{paper.title}}
                                             </a>
                                         </h2>
-                                        <p class="by-authors">by <a>{{paper.author}}</a>
+                                        <p class="by-authors">by <b>{{ forloop.counter|add:"-1" }}.{{paper.author}}</b>
                                         </p>
                                         <i>{{paper.doi}}
                                             (registering
                                             DOI) - {{paper.date_created}}</i>
                                         <p class="abstract">
-                                            <a href="#0">Abstract</a>
+                                            <b>Abstract</b>
                                             {{paper.description | truncatechars:200}}
-                                            <a href="#0"> Read more.</a>
+                                            <a href="{% url 'paper' paper.id %}"> Read more.</a>
                                         </p>
                                         <p class="belongs-to">(This article belongs to the <a
-                                                href="#0">{{paper.journal}})</a>
+                                                href="{% url 'journal' paper.journal.id %}">{{paper.journal}})</a>
                                         </p>
                                     </div>
                                     {% endfor %}

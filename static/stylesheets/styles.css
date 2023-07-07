@@ -24,7 +24,6 @@
     div.gap {
         display: none;
     }
-
 }
 
 header.header-section nav {
@@ -131,7 +130,7 @@ li.nav-links-initiative:hover ul.inner-nav-initiative {
 }
 
 li.nav-links-information:hover ul.inner-nav-information {
-    width: 400px;
+    width: 200px;
 }
 
 li.nav-links-journals:hover ul.inner-nav-journals li,
@@ -232,18 +231,21 @@ li.mobile-nav-links ul.mobile-inner-nav-about a:hover {
 }
 
 /* styles for the hero image in the index page */
-div.hero-image {
+div.hero-image,
+div.topics-hero {
     height: 250px;
     width: 100%;
-    background: rgb(255, 255, 255) url(../assets/imgs/index-hero.webp) no-repeat center center;
     padding: 50px;
     display: flex;
     flex-direction: column;
-    /* background-size: ; */
-    /* align-items: center; */
 }
 
-div.hero-image h1 {
+div.hero-image {
+    background: rgb(255, 255, 255) url(../assets/imgs/index-hero.webp) no-repeat center center;
+}
+
+div.hero-image h1,
+div.topics-hero h1 {
     color: #fff;
     font-size: 3.2rem;
     font-weight: 700;
@@ -251,7 +253,9 @@ div.hero-image h1 {
 }
 
 @media screen and (max-width: 1000px) {
-    div.hero-image h1 {
+
+    div.hero-image h1,
+    div.topics-hero h1 {
         font-size: 2rem;
     }
 }
@@ -274,14 +278,21 @@ div.hero-image div.learn-more-button a:hover {
 div.search-section {
     display: flex;
     justify-content: space-around;
-    padding: 20px 0;
+    padding: 20px 0 20px 30px;
+}
+
+@media screen and (min-width: 1200px) {
+    div.search-section {
+        display: block;
+    }
 }
 
 div.search-section div.sub-search-section input,
 div.search-section div.sub-search-section select,
 .footer-select,
 div.footer-subscribe-form input,
-div.side-menu-select select {
+div.side-menu-select select,
+div.mmcicaic div.sub-search-section select {
     padding: 5px 10px;
     border-radius: 5px;
     border-width: 1px;
@@ -345,6 +356,17 @@ summary.dropdown-headers {
     color: var(--primary-color);
     font-weight: 600;
 }
+
+@media screen and (min-width: 767px) {
+    summary.dropdown-headers::-webkit-details-marker {
+        display: none;
+    }
+
+    summary.dropdown-headers {
+        list-style-type: none;
+    }
+}
+
 
 details.details summary,
 details.details ul li a {
@@ -877,7 +899,8 @@ h2.sa-headings-h2 {
 }
 
 /* styles for sa-heading-bts */
-div.sa-heading-bts-d-container {
+div.sa-heading-bts-d-container,
+div.t-and-c-container {
     display: flex;
 }
 
@@ -922,15 +945,294 @@ div.sf-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4rem;
+    /* height: 100px; */
     flex-flow: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 div.sf-container input {
-    text-align: center;
+    width: 200px;
 }
 
 div.sf-container p,
 div.sf-container input {
+    margin: 0;
+}
+
+div.t-and-c-container input,
+div.t-and-c-container label,
+div.submit-buttons button {
+    width: fit-content;
+    display: inline;
+}
+
+div.t-and-c-container,
+div.submit-buttons,
+div div div ul.has-margin-top {
+    margin-top: 20px;
+}
+
+div.t-and-c-container div div div:first-of-type {
+    padding: 0;
+    width: fit-content;
+}
+
+div.submit-buttons button {
+    margin-right: 10px;
+    border-width: 1px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+div.submit-buttons button.submit:hover {
+    background-color: rgb(152, 253, 0);
+}
+
+div.submit-buttons button.reset:hover {
+    background-color: rgb(253, 0, 0);
+    color: #fff;
+}
+
+/* styles for the single-volume-view page */
+div.image-with-text div div img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* begining of styles for the journals page */
+div.sa-upper-section h3.heading3 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+div.jl-container div.jl-inner-container {
+    border-bottom: 1px solid #d4d4d4;
+    padding: 10px 0;
+}
+
+div.jl-container p {
+    font-weight: bolder;
+    font-size: 12px;
+    margin: 0;
+}
+
+div.jl-container div.jl-content {
+    display: flex;
+    align-items: center;
+}
+
+div.jl-container div.jl-content img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+div.jl-container div.jl-content p.jlc-heading {
+    font-weight: 400;
+}
+
+@media screen and (max-width: 992px) {
+    div.jl-container div.hidden-on-mobile {
+        display: none;
+    }
+}
+
+
+/* Begining of styles for the topics page */
+div.topics-hero-img {
+    background-image: url(../assets/imgs/topics3_header.webp);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    /* height: 5000px; */
+}
+
+/* div.search-section div.sub-search-section select#journal option {
+    width: inherit !important;
+} */
+
+div.topics div.recent-articles-child {
+    padding: 20px 0 0 0;
+}
+
+div.topics div.recent-articles-child div.recent-article,
+div.lmc-inner-container {
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 10px;
+}
+
+
+/* Begining of styles for the authors page */
+div.lmc-inner-container {
+    padding-top: 10px;
+}
+
+div.lmc-inner-container:last-of-type {
+    border: none;
+}
+
+div.lmc-inner-container p a {
+    text-decoration: none;
+    color: #4f5671;
+    font-size: 14px;
+}
+
+summary.dropdown-headers h2.authors-side-heading {
+    font-size: 25px;
+    color: #000;
+}
+
+@media screen and (max-width: 767px) {
+    summary.dropdown-headers h2.authors-side-heading {
+        font-size: 15px;
+    }
+}
+
+div.mmcic-authors h3 {
+    margin: 20px 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+div.mmcicaic {
+    padding: 10px 0;
+}
+
+div.mmcicaic ul li a {
+    color: #4f5671;
+    font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+div.mmcicaic ul li a:hover {
+    text-decoration: underline;
+}
+
+div.mmcicaic h3.b-button {
+    margin: 0;
+}
+
+div.mmcicaic-sc div div.columns {
+    display: flex;
+    align-items: center;
+}
+
+div.mmcicaic-dc {
+    padding: 0 20px;
+}
+
+div.mmcicaic-dc h3 {
+    font-size: 18px;
+}
+
+div.mmcicaic-dc ul li {
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+div.mmcicaic-c-body ul li {
+    font-size: 12px;
+}
+
+div.mmcicaic-top {
+    border-left: 2px solid #f6f6f6;
+    padding-left: 10px;
+}
+
+div.mmcicaic div.sub-search-section select {
+    width: 100%;
+}
+
+div.mmcicaic-button-containers {
+    display: flex;
+}
+
+div.mmcicaic-button-containers button {
+    border: 1px solid black;
+    margin-right: 20px;
+    color: #4f5671 !important;
+    font-weight: 400;
+}
+
+div.mmcicaic-button-containers button:hover {
+    color: #fff !important;
+}
+
+
+/* beginig of styles for the editors page */
+div.mmcicaic details .editors-list li {
+    list-style-type: disc;
+    font-size: 12px;
+}
+
+div.mmcicaic summary.mmcicaic-summary {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.mmcicaic summary.mmcicaic-summary h4 {
+    display: inline-block;
+}
+
+/* begining of styles for the open access page */
+ul.editors-list-for-video li {
+    font-size: 12px;
+}
+
+
+/* Begining of styles for the research and publication ethics page */
+div h2.mmcica-headings {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+/* begining of styles for the the article processing charges page */
+div ul.apc-upper-lists li {
+    margin: 10px 0;
+}
+
+div.mmcicaic-img-price {
+    padding-right: 100px;
+}
+
+div.mmcicaic-img-price div {
+    display: flex;
+    align-items: center;
+}
+
+div.mmcicaic-img-price div p {
+    margin: 0;
+}
+
+@media screen and (max-width: 576px) {
+    div.mmcicaic-img-price {
+        padding-right: 10px;
+    }
+}
+
+/* begining of styles for the about overview page */
+div.mmcicaic img.partners {
+    height: 45px;
+}
+
+/* begining of styles for the contact us page */
+h2.mmcic-contact-headings {
+    margin: 20px 0;
+}
+
+div.contact-img-and-text img {
+    width: 100%;
+    height: auto;
+}
+
+div.mmcicaic div.ciatic p {
     margin: 0;
 }

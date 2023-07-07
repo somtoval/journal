@@ -1,0 +1,99 @@
+{% extends 'journalApp/main.html' %}
+{% block content %}
+{% load static %}
+    <main class="main-secton">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-2 left-main-container "></div>
+
+                <div class="col-12 col-md-8 middle-main-container">
+                    <div class="container-fluid ">
+                        <div class="row">
+                            <div class="inner-main-section col-12 recent-articles">
+                                <h2 class="sa-headings-h2">MDPI Journal List</h2>
+                                <div class="sa-upper-section">
+                                    <h3 class="sa-headings-h2 heading3">{{journal_count}} journals</h3>
+                                    <p>MDPI currently publishes {{journal_count}} peer-reviewed journals, and 9 conference
+                                        journals which are dedicated to publishing outputs
+                                        from academic conferences.</p>
+                                    <h2 class="sa-headings-h2">Journal Proposal</h2>
+                                </div>
+                                <div class="sa-heading-bt-container">
+                                    <p>As an open access pioneer and innovative publisher, MDPI is always interested
+                                        in exploring new opportunities for
+                                        collaboration, including the launch of new journals and the transfer of
+                                        existing journals. Researchers interested in
+                                        submitting a proposal for a new journal for consideration, or interested in
+                                        having their journal published by MDPI, can
+                                        submit their proposal here.</p>
+                                </div>
+
+                                <div class="jl-container container-fluid">
+                                    <div class="row jl-inner-container">
+                                        <div class="col-lg-1 jl-content">
+                                            <p>#</p>
+                                        </div>
+                                        <div class="col-lg-4 jl-content">
+                                            <p>Journal Name</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content">
+                                            <p>ISSN</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content">
+                                            <p>Launched</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content">
+                                            <p>IF</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content">
+                                            <p>Cite Score</p>
+                                        </div>
+                                        <div class="col-lg-2 jl-content">
+                                            <p>Current Issue</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content">
+                                            <p>Total Articles</p>
+                                        </div>
+                                    </div>
+                                    {% for journal in journals %}
+                                    <div class="row jl-inner-container">
+                                        <div class="col-lg-1 col-1 jl-content">
+                                            <p>{{ forloop.counter }}</p>
+                                        </div>
+                                        <div class="col-lg-4 col-8 jl-content">
+                                            <img src="../assets/imgs/ijms-logo-sq.webp" alt="">
+                                            <p class="jlc-heading"><a href="#0">{{journal.name}}</a></p>
+                                        </div>
+                                        <div class="col-lg-1 col-3 jl-content">
+                                            <p>2624-599X</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content hidden-on-mobile">
+                                            <p>2022</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content hidden-on-mobile">
+                                            <p>-</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content hidden-on-mobile">
+                                            <p><a href="#0">{{journal.impact}}</a></p>
+                                        </div>
+                                        <div class="col-lg-2 jl-content hidden-on-mobile">
+                                            <p>v.5(2),Jun 2023</p>
+                                        </div>
+                                        <div class="col-lg-1 jl-content hidden-on-mobile">
+                                            <p><a href="#0">245</a> </p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-2 right-main-container rho-mobile">
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock content %}

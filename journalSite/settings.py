@@ -124,6 +124,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+# This saves uploaded files to static/uploads folder and sets it as the root.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
